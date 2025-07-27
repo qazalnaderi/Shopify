@@ -162,11 +162,6 @@ class ItemMainService(BaseService):
             
         updated_item = await self.item_service.edit_item(item_id, item_data_dict)
 
-        return updated_item
-
-
-
-
         return ItemResponseSchema(
             item_id=updated_item.item_id,
             website_id=updated_item.website_id,
@@ -217,6 +212,7 @@ class ItemMainService(BaseService):
                 description=item.description,
                 price=item.price,
                 discount_price=item.discount_price,
+                discount_percent= item.discount_percent,
                 discount_active=item.discount_active,
                 discount_expires_at=item.discount_expires_at,
                 delivery_url=item.delivery_url,

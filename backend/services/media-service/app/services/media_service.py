@@ -41,10 +41,10 @@ class MediaService:
 
     async def __get_media_model(self, media_id: ObjectId, user_id: str) -> Tuple[MediaGridFSModel, AsyncIOMotorGridOut]:
         media = await self.media_repository.get_media(media_id)
-        if not media:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Media not found"
-            )
+        # if not media:
+        #     raise HTTPException(
+        #         status_code=status.HTTP_404_NOT_FOUND, detail="Media not found"
+        #     )
         if media.user_id != user_id:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
@@ -60,8 +60,8 @@ class MediaService:
     self, media_id: ObjectId
     ) -> tuple[MediaSchema, Callable[[], Generator[Any, Any, None]]]:
         media = await self.media_repository.get_media(media_id)
-        if not media:
-            raise HTTPException(status_code=404, detail="Media not found")
+        # if not media:
+        #     raise HTTPException(status_code=404, detail="Media not found")
 
         file = await self.storage.get_file(media.storage_id)
 

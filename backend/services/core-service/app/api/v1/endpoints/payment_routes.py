@@ -13,12 +13,14 @@ payment_router = APIRouter()
 
 @payment_router.post("/order_request")
 async def request_order_payment(
+    website_id: UUID,
     current_buyer: Annotated[TokenDataSchema, Depends(get_current_buyer)],
     payment_main_service: Annotated[PaymentMainService, Depends()] ,
 ):
     logger.info(f"Buyer {current_buyer.buyer_id} is starting to pay...")
-    payment_url = await payment_main_service.initiate_order_payment(current_buyer.buyer_id)
+    payment_url = await payment_main_service.initiate_order_payment(website_id, current_buyer.buyer_id)
     return {"payment_url": payment_url}
+
 
 
 @payment_router.get("/order_payment/callback")
@@ -26,7 +28,7 @@ async def payment_callback(
     payment_main_service: Annotated[PaymentMainService, Depends()],
     order_id: UUID= Query(...),
     website_id: UUID = Query(...),
-    authority: str = Query(..., alias="Authority"),  
+  ] authority: str = Query(..., alias="Authority"),  
     status: str = Query(..., alias="Status")   
 ):
     result = await payment_main_service.confirm_order_payment(order_id, authority, status)

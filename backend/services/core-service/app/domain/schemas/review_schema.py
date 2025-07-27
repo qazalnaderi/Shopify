@@ -13,6 +13,7 @@ class ReviewResponseSchema(BaseModel):
     review_id: UUID
     item_id: UUID
     buyer_id: UUID
+    buyer_name: str
     website_id: UUID
     rating: int
     text: str

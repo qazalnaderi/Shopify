@@ -84,8 +84,8 @@ class OrderRepository:
     async def get_order_items(self, order_id: UUID):
         return self.db.query(OrderItem).filter(OrderItem.order_id == order_id).all()
 
-    def get_pending_order(self, buyer_id: UUID) -> List[Order]:
-        return self.db.query(Order).filter(Order.buyer_id == buyer_id, Order.status == "Pending").first()  
+    def get_pending_order(self, website_id:UUID, buyer_id: UUID) -> List[Order]:
+        return self.db.query(Order).filter(Order.buyer_id == buyer_id, Order.website_id == website_id, Order.status == "Pending").first()  
 
 
     def get_order_item_by_buyer_and_item(self, buyer_id:UUID, item_id:UUID)-> OrderItem:

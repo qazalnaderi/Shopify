@@ -11,20 +11,20 @@ class PaymentService:
         self.sandbox_verify_url = "https://sandbox.zarinpal.com/pg/v4/payment/verify.json"
         self.sandbox_startpay_url = "https://sandbox.zarinpal.com/pg/StartPay/"
 
-    def create_order_callback_url(self, order_id: UUID) -> str:
+    def create_order_callback_url(self, website_id:UUID ,order_id: UUID) -> str:
         """
         This method constructs the Callback URL based on the order_id.
         You can modify this URL depending on your server's structure.
         """
-        base_url = "https://tradehub-core.liara.run/api/v1/payment/order_payment/callback"
-        return f"{base_url}/{order_id}"
+        base_url = "http://tradehub.localhost/api/v1/payment/order_payment/callback"
+        return f"{base_url}/{order_id}?website_id={website_id}"
+    async def request_order_payment(self, website_id:UUID, order_id: UUID, amount: Decimal) -> str:
 
-    async def request_order_payment(self, order_id: UUID, amount: Decimal) -> str:
 
         payload = {
             "merchant_id": self.merchant_id,
             "amount": float(amount),
-            "callback_url": self.create_order_callback_url(order_id),
+            "callback_url": self.create_order_callback_url(website_id, order_id),
             "description": f"پرداخت برای سفارش {order_id}",
             "metadata": {}
         }

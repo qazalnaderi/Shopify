@@ -51,9 +51,9 @@ class OrderService:
         logger.info(f"Updating order status: {order_id}")
         return self.order_repository.update_order_status(order_id, new_status)
 
-    async def get_pending_order(self, buyer_id: UUID) -> Order:
+    async def get_pending_order(self, website_id:UUID, buyer_id: UUID) -> Order:
         logger.info(f"Getting pending order with id buyer: {buyer_id}")
-        return self.order_repository.get_pending_order(buyer_id)
+        return self.order_repository.get_pending_order(website_id, buyer_id)
     
 
     async def reduce_stock(self, order_id: UUID):

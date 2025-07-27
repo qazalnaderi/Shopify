@@ -18,15 +18,15 @@ class PaymentMainService:
         self.user_service = user_service
         self.plan_service = plan_service
 
-    async def initiate_order_payment(self, buyer_id: UUID) -> str:
+    async def initiate_order_payment(self, website_id: UUID, buyer_id: UUID) -> str:
         logger.info(f"Initiating payment for buyer: {buyer_id}")
-        order = await self.order_service.get_pending_order(buyer_id)
+        order = await self.order_service.get_pending_order(website_id, buyer_id)
         
         if not order:
             raise HTTPException(status_code=404, detail="Order not found")
 
         
-        payment_url = await self.payment_service.request_order_payment(order.order_id, amount = order.total_price)
+        payment_url = await self.payment_service.request_order_payment(website_id, order.order_id, amount = order.total_price)
         return payment_url
 
     async def confirm_order_payment(self, order_id: UUID, authority: str, status: str) -> bool:

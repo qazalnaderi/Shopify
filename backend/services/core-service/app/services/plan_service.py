@@ -33,7 +33,7 @@ class PlanService:
     async def check_item_limit(self, website_id: UUID):
         active_plan = await self.get_active_plan_by_website_id(website_id)
 
-        if active_plan == "Inactive":
+        if not active_plan:
             raise HTTPException(status_code=403, detail="No active plan for this website.")
         logger.info(f"Active plan for website ID: {website_id} is {active_plan}")
 
@@ -46,7 +46,7 @@ class PlanService:
 
     async def check_discount_permission(self, website_id: UUID) -> bool:
         active_plan = self.plan_repository.get_active_plan_by_website_id(website_id)
-        if  active_plan=="Inactive":
+        if not active_plan:
             raise HTTPException(status_code=403, detail="No active plan for this website.")
         if not active_plan.plan.allow_discount :
             raise HTTPException(status_code=403, detail="Your plan does not allow discount features.")
@@ -98,7 +98,7 @@ class PlanService:
         website = self.website_repository.get_website_by_id(website_id)
         if not website:
             raise HTTPException(status_code=404, detail="Website not found.")
-        active_plan = self.get_active_plan_by_website_id(website_id)
+        # active_plan = self.get_active_plan_by_website_id(website_id)
         # if active_plan:
         #     raise HTTPException(status_code=400, detail="This website already has an active plan.")
         basic_plan = self.plan_repository.get_basic_plan()

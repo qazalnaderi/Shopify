@@ -15,6 +15,7 @@ class QuestionResponseSchema(BaseModel):
     question_id: UUID
     item_id: UUID
     website_id: UUID
+    buyer_name: str
     question_text: str
     answer_text: Optional[str] = None
     created_at: datetime

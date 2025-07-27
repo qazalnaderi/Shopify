@@ -21,8 +21,9 @@ class QuestionService:
 
 
     async def create_question(self, buyer_id: UUID, data: QuestionCreateSchema) -> ItemQuestion:
-        plan = self.plan_service.get_active_plan_by_website_id(data.website_id)
-        if plan != 'Pro':
+        website_plan = await self.plan_service.get_active_plan_by_website_id(data.website_id)
+        plan = await self.plan_service.get_plan_by_id(website_plan.plan_id)
+        if plan.name != 'Pro':
             raise HTTPException(status_code=403, detail="Asking questions is only available in pro plan.")
 
         return self.question_epository.create_question(buyer_id, data)
