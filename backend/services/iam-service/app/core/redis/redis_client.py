@@ -6,11 +6,10 @@ from core.configs.config import get_settings
 config = get_settings()
 
 try:
-    redis_client = Redis(
-        host=config.REDIS_URL,
-        port=config.REDIS_PORT,
-        decode_responses=True
-    )
+    redis_client = Redis.from_url(
+    url=config.REDIS_URL,
+    decode_responses=True
+)
     logger.info("Redis Client Created")
 
 except Exception as e:
