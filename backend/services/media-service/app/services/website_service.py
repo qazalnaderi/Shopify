@@ -1,11 +1,11 @@
-from app.infrastructure.repositories.website_repository import WebsiteRepository
-from app.domain.schemas.website_schema import  WebsiteUpdateSchema
+from infrastructure.repositories.website_repository import WebsiteRepository
+from domain.schemas.website_schema import  WebsiteUpdateSchema
 from uuid import UUID
 from fastapi import HTTPException, Depends
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated
 from loguru import logger
-from app.domain.models.website_model import Website
+from domain.models.website_model import Website
 
 class WebsiteService(BaseService):
     def __init__(

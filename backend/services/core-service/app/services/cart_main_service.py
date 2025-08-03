@@ -1,10 +1,10 @@
-from app.services.base_service import BaseService
-from app.services.cart_service import CartService
-from app.services.item_service import ItemService
+from services.base_service import BaseService
+from services.cart_service import CartService
+from services.item_service import ItemService
 from typing import Annotated, List, Optional
 from fastapi import Depends
 from uuid import UUID
-from app.domain.schemas.cart_schema import CartItemResponseSchema, MessageResponse
+from domain.schemas.cart_schema import CartItemResponseSchema, MessageResponse
 from loguru import logger
 
 class CartMainService(BaseService):

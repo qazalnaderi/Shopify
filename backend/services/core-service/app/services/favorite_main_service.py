@@ -1,7 +1,7 @@
 from loguru import logger
-from app.services.favorite_service import FavoriteService
+from services.favorite_service import FavoriteService
 from uuid import UUID
-from app.domain.schemas.favorite_schema import FavoriteResponseSchema
+from domain.schemas.favorite_schema import FavoriteResponseSchema
 from typing  import Annotated, List
 from fastapi import HTTPException, Depends
 

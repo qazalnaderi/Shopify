@@ -1,17 +1,17 @@
 from typing import List
 from uuid import UUID
 from fastapi import Depends, HTTPException
-from app.services.base_service import BaseService
-from app.services.order_service import OrderService
-from app.services.item_service import ItemService
-from app.services.user_service import UserService
-from app.services.buyer_service import BuyerService
+from services.base_service import BaseService
+from services.order_service import OrderService
+from services.item_service import ItemService
+from services.user_service import UserService
+from services.buyer_service import BuyerService
 
-from app.domain.schemas.order_schema import OrderResponseSchema, OrderItemResponseSchema, OrderFactorResponseSchema
-from app.domain.models.order_model import Order
+from domain.schemas.order_schema import OrderResponseSchema, OrderItemResponseSchema, OrderFactorResponseSchema
+from domain.models.order_model import Order
 from loguru import logger
 from typing import Annotated
-from app.services.coupon_main_service import CouponMainService
+from services.coupon_main_service import CouponMainService
 class OrderMainService(BaseService):
     def __init__(self,  
         order_service : Annotated[OrderService, Depends()],

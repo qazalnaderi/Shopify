@@ -1,11 +1,11 @@
 from typing import Annotated, Dict
 from loguru import logger
 from fastapi import Depends, HTTPException
-from app.domain.models.buyer_model import Buyer
-from app.domain.schemas.buyer_schema import BuyerCreateSchema
-from app.infrastructure.repositories.buyer_repository import BuyerRepository
-from app.services.auth_services.hash_service import HashService
-from app.services.base_service import BaseService
+from domain.models.buyer_model import Buyer
+from domain.schemas.buyer_schema import BuyerCreateSchema
+from infrastructure.repositories.buyer_repository import BuyerRepository
+from services.auth_services.hash_service import HashService
+from services.base_service import BaseService
 import uuid
 
 

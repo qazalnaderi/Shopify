@@ -16,7 +16,7 @@ class PaymentService:
         This method constructs the Callback URL based on the order_id.
         You can modify this URL depending on your server's structure.
         """
-        base_url = "http://tradehub.localhost/api/v1/payment/order_payment/callback"
+        base_url = "https://core-tradehub.liara.run/api/v1/payment/order_payment/callback"
         return f"{base_url}/{order_id}?website_id={website_id}"
     async def request_order_payment(self, website_id:UUID, order_id: UUID, amount: Decimal) -> str:
 
@@ -59,7 +59,7 @@ class PaymentService:
                 return False
             
     def create_plan_callback_url(self, website_id: UUID, plan_id: UUID) -> str:
-        base_url = "http://tradehub.localhost/api/v1/payment/plan_payment/callback"
+        base_url = "https://core-tradehub.liara.run/api/v1/payment/plan_payment/callback"
         return f"{base_url}?website_id={website_id}&plan_id={plan_id}"
 
 

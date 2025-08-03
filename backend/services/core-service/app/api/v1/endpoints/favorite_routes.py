@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, status
 from typing import List
 from uuid import UUID
-from app.domain.schemas.favorite_schema import FavoriteResponseSchema
-from app.services.favorite_main_service import FavoriteMainService
-from app.services.auth_services.buyer_auth_service import get_current_buyer
-from app.domain.schemas.token_schema import TokenDataSchema
+from domain.schemas.favorite_schema import FavoriteResponseSchema
+from services.favorite_main_service import FavoriteMainService
+from services.auth_services.buyer_auth_service import get_current_buyer
+from domain.schemas.token_schema import TokenDataSchema
 from typing import Annotated
 
 favorite_router = APIRouter()

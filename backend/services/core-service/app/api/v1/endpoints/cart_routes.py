@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from app.services.cart_main_service import CartMainService
-from app.domain.schemas.cart_schema import CartItemCreateSchema, CartItemResponseSchema, MessageResponse
+from services.cart_main_service import CartMainService
+from domain.schemas.cart_schema import CartItemCreateSchema, CartItemResponseSchema, MessageResponse
 from typing import Annotated, List
 from uuid import UUID
-from app.services.auth_services.buyer_auth_service import get_current_buyer
-from app.domain.schemas.token_schema import TokenDataSchema
+from services.auth_services.buyer_auth_service import get_current_buyer
+from domain.schemas.token_schema import TokenDataSchema
 from loguru import logger
 
 cart_router = APIRouter()

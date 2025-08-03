@@ -3,12 +3,12 @@ from typing import Annotated
 from loguru import logger
 import jwt
 from fastapi import Depends, HTTPException, status
-from  app.services.buyer_service import BuyerService
-from app.domain.schemas.token_schema import TokenDataSchema, TokenSchema
-from app.domain.schemas.admin_schema import AdminLoginSchema
-from app.domain.schemas.buyer_schema import BuyerLoginSchema
+from services.buyer_service import BuyerService
+from domain.schemas.token_schema import TokenDataSchema, TokenSchema
+from domain.schemas.admin_schema import AdminLoginSchema
+from domain.schemas.buyer_schema import BuyerLoginSchema
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from app.domain.models.buyer_model import Buyer
+from domain.models.buyer_model import Buyer
 http_bearer = HTTPBearer() 
 
 

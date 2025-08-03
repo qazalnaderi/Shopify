@@ -1,10 +1,10 @@
 
 from fastapi import APIRouter, Depends,Query 
-from app.services.admin_main_service import AdminMainService
-from app.domain.schemas.admin_schema import ShopPlanStatsSchema, TopWebsiteSchema, WebsiteListSchema, RevenueStatsSchema, RevenueTrendSchema
+from services.admin_main_service import AdminMainService
+from domain.schemas.admin_schema import ShopPlanStatsSchema, TopWebsiteSchema, WebsiteListSchema, RevenueStatsSchema, RevenueTrendSchema
 from typing import Annotated, List
-from app.services.auth_services.admin_auth_service import get_current_admin
-from app.domain.schemas.token_schema import AdminTokenDataSchema
+from services.auth_services.admin_auth_service import get_current_admin
+from domain.schemas.token_schema import AdminTokenDataSchema
 from loguru import logger
 
 

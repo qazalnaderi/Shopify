@@ -1,7 +1,7 @@
 from typing import Annotated, Dict
 from loguru import logger
 from fastapi import Depends, HTTPException, status
-from app.domain.schemas.user_schema import (
+from domain.schemas.user_schema import (
     UserCreateSchema,
     UserResponseSchema,
     VerifyOTPSchema,
@@ -9,12 +9,12 @@ from app.domain.schemas.user_schema import (
     ResendOTPResponseSchema,
     ResendOTPSchema
 )
-from app.domain.schemas.token_schema import TokenSchema
-from app.services.auth_services.auth_service import AuthService
-from app.services.auth_services.otp_service import OTPService
-from app.services.base_service import BaseService
-from app.services.user_service import UserService
-from app.utils import helper
+from domain.schemas.token_schema import TokenSchema
+from services.auth_services.auth_service import AuthService
+from services.auth_services.otp_service import OTPService
+from services.base_service import BaseService
+from services.user_service import UserService
+from utils import helper
 from uuid import UUID
 
 class RegisterService(BaseService):

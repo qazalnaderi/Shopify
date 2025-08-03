@@ -1,14 +1,14 @@
-from app.domain.models.website_model import Website, WebsiteOwner, WebsiteCategory, WebsiteSubcategory, Announcement, User
-from app.domain.models.buyer_model import Buyer
+from domain.models.website_model import Website, WebsiteOwner, WebsiteCategory, WebsiteSubcategory, Announcement, User
+from domain.models.buyer_model import Buyer
 from sqlalchemy.orm import Session
 from loguru import logger
 from uuid import UUID
-from app.core.postgres_db.database import get_db
+from core.postgres_db.database import get_db
 from typing import Annotated
 from fastapi import Depends
 from typing import List, Optional
 from sqlalchemy import func
-from app.utils.date_utils import to_jalali_str
+from utils.date_utils import to_jalali_str
 
 
 class WebsiteRepository:

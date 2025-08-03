@@ -1,14 +1,14 @@
-from  app.domain.schemas.admin_schema import AdminLoginSchema, AdminResponseSchema, VerifyOTPResponseSchema, VerifyOTPSchema, ForgetPasswordSchema, ResendOTPResponseSchema, ResendOTPSchema
-from  app.domain.schemas.token_schema import TokenSchema, TokenDataSchema
-from  app.services.auth_services.auth_service import AuthService
-from  app.services.admin_service import AdminService
-from app.services.admin_auth_service import AdminAuthService
-from  app.services.auth_services.auth_service import get_current_admin
+from domain.schemas.admin_schema import AdminLoginSchema, AdminResponseSchema, VerifyOTPResponseSchema, VerifyOTPSchema, ForgetPasswordSchema, ResendOTPResponseSchema, ResendOTPSchema
+from domain.schemas.token_schema import TokenSchema, TokenDataSchema
+from services.auth_services.auth_service import AuthService
+from services.admin_service import AdminService
+from services.admin_auth_service import AdminAuthService
+from services.auth_services.auth_service import get_current_admin
 from fastapi import Depends, HTTPException, status, APIRouter
 from fastapi.security import OAuth2PasswordRequestForm
 from typing import Annotated
 from loguru import logger
-from app.domain.models.admin_model import Admin
+from domain.models.admin_model import Admin
 admin_router = APIRouter()
 
 @admin_router.post("/login", response_model=TokenSchema, status_code=status.HTTP_200_OK)

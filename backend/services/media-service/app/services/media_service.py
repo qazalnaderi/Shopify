@@ -3,10 +3,10 @@ from fastapi import Depends, UploadFile, HTTPException, status
 from loguru import logger
 from typing import Annotated, Generator, Callable, Any, Tuple
 from motor.motor_asyncio import AsyncIOMotorGridOut
-from app.domain.models.media_model import MediaGridFSModel
-from app.domain.schemas.media_schema import MediaSchema
-from app.infrastructure.repositories.media_repository import MediaRepository
-from app.infrastructure.storage.gridfs_storage import GridFsStorage
+from domain.models.media_model import MediaGridFSModel
+from domain.schemas.media_schema import MediaSchema
+from infrastructure.repositories.media_repository import MediaRepository
+from infrastructure.storage.gridfs_storage import GridFsStorage
 
 
 class MediaService:

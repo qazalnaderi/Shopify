@@ -1,7 +1,7 @@
 
-from app.domain.models.review_model import Review
+from domain.models.review_model import Review
 from loguru import logger
-from app.infrastructure.repositories.review_repository import ReviewRepository
+from infrastructure.repositories.review_repository import ReviewRepository
 from typing import Annotated, List, Optional
 from fastapi import HTTPException, Depends
 from uuid import UUID

@@ -1,10 +1,10 @@
 from uuid import UUID
-from app.domain.schemas.review_schema import  ReviewResponseSchema
+from domain.schemas.review_schema import  ReviewResponseSchema
 from loguru import logger
-from app.services.review_service import ReviewService
+from services.review_service import ReviewService
 from fastapi import HTTPException, Depends
 from typing import Annotated, List
-from app.services.buyer_service import BuyerService
+from services.buyer_service import BuyerService
 
 
 class ReviewMainService:

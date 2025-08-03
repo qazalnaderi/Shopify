@@ -1,12 +1,12 @@
 from typing import Annotated, List
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from app.core.postgres_db.database import get_db
-from app.domain.models.qan_model import ItemQuestion
+from core.postgres_db.database import get_db
+from domain.models.qan_model import ItemQuestion
 from uuid import UUID
 from datetime import datetime
 
-from app.domain.schemas.qan_schema import QuestionCreateSchema
+from domain.schemas.qan_schema import QuestionCreateSchema
 
 
 class QuestionRepository:

@@ -2,13 +2,13 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from typing import Annotated
 from loguru import logger
-from app.infrastructure.clients.iam_client import IAMClient
-from app.domain.schemas.token_schema import TokenDataSchema
-from app.core.configs.config import get_settings
+from infrastructure.clients.iam_client import IAMClient
+from domain.schemas.token_schema import TokenDataSchema
+from core.configs.config import get_settings
 
 config = get_settings()
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"http://iam.localhost/api/v1/users/login", scheme_name="UserOAuth2")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"https://iam-tradehub.liara.run/api/v1/users/login", scheme_name="UserOAuth2")
 
 
 async def get_current_user(

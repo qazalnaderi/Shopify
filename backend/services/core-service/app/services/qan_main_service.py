@@ -1,11 +1,11 @@
 from typing import List
 from uuid import UUID
 from fastapi import Depends, HTTPException
-from app.services.qan_service import QuestionService
-from app.domain.schemas.qan_schema import QuestionCreateSchema, QuestionAnswerSchema, QuestionResponseSchema
+from services.qan_service import QuestionService
+from domain.schemas.qan_schema import QuestionCreateSchema, QuestionAnswerSchema, QuestionResponseSchema
 from loguru import logger
 from typing import Annotated
-from app.services.buyer_service import BuyerService
+from services.buyer_service import BuyerService
 
 
 class QuestionMainService:

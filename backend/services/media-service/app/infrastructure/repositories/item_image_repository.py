@@ -1,10 +1,10 @@
 from sqlalchemy.orm import Session
 from uuid import UUID
 from typing import List, Annotated, Optional
-from app.domain.models.item_image_model import ItemImage   
+from domain.models.item_image_model import ItemImage   
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from app.core.postgres_db.postgres_database import get_db
+from core.postgres_db.postgres_database import get_db
 from loguru import logger
 class ItemImageRepository:
     def __init__(self, db: Annotated[Session, Depends(get_db)]):

@@ -1,13 +1,13 @@
 
-from app.services.admin_service import AdminService
-from app.services.plan_service import PlanService
-from app.services.website_service import WebsiteService
-from app.domain.schemas.admin_schema import ShopPlanStatsSchema, TopWebsiteSchema, WebsiteListSchema 
+from services.admin_service import AdminService
+from services.plan_service import PlanService
+from services.website_service import WebsiteService
+from domain.schemas.admin_schema import ShopPlanStatsSchema, TopWebsiteSchema, WebsiteListSchema 
 from typing import Annotated, List
 from fastapi import Depends
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-from app.utils.date_utils import get_jalali_month_year
+from utils.date_utils import get_jalali_month_year
 
 class AdminMainService:
     def __init__(self,

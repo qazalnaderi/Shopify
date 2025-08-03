@@ -2,9 +2,9 @@ from typing import Annotated
 from uuid import UUID
 from loguru import logger
 from fastapi import Depends
-from app.core.configs.config import get_settings, Settings
-from app.domain.schemas.token_schema import TokenDataSchema, AdminTokenDataSchema
-from app.infrastructure.clients.http_client import HTTPClient
+from core.configs.config import get_settings, Settings
+from domain.schemas.token_schema import TokenDataSchema, AdminTokenDataSchema
+from infrastructure.clients.http_client import HTTPClient
 
 
 class IAMClient:

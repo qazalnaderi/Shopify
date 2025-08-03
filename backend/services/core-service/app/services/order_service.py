@@ -2,13 +2,13 @@ from uuid import UUID
 from typing import List, Annotated
 from fastapi import Depends, HTTPException
 from loguru import logger
-from app.services.item_service import ItemService
-from app.infrastructure.repositories.order_repository import OrderRepository
-from app.services.cart_service import CartService
-from app.domain.models.order_model import Order, OrderItem
-from app.domain.models.website_model import Coupon
-from app.domain.schemas.item_schema import ItemUpdateSchema
-from app.infrastructure.repositories.coupon_repository import CouponRepository
+from services.item_service import ItemService
+from infrastructure.repositories.order_repository import OrderRepository
+from services.cart_service import CartService
+from domain.models.order_model import Order, OrderItem
+from domain.models.website_model import Coupon
+from domain.schemas.item_schema import ItemUpdateSchema
+from infrastructure.repositories.coupon_repository import CouponRepository
 from datetime import datetime
 from decimal import Decimal
 class OrderService:

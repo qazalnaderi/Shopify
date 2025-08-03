@@ -1,8 +1,8 @@
 from typing import Annotated, List
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.core.postgres_db.database import get_db
-from app.domain.models.website_model import WebsitePlan, SubscriptionPlan, Website
+from core.postgres_db.database import get_db
+from domain.models.website_model import WebsitePlan, SubscriptionPlan, Website
 from datetime import datetime
 from uuid import UUID
 from sqlalchemy.orm import joinedload

@@ -3,8 +3,8 @@ from loguru import logger
 from fastapi import Depends
 from sqlalchemy.orm import Session
 from typing import Optional
-from  app.core.postgres_db.database import get_db
-from  app.domain.models.website_model import User, Website, WebsiteOwner
+from core.postgres_db.database import get_db
+from domain.models.website_model import User, Website, WebsiteOwner
 from uuid import UUID
 from sqlalchemy import func
 

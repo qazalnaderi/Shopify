@@ -1,9 +1,9 @@
-from app.domain.schemas.review_schema import  ReviewResponseSchema
-from app.services.slug_service import SlugService
+from domain.schemas.review_schema import  ReviewResponseSchema
+from services.slug_service import SlugService
 from fastapi import HTTPException, Depends
 from typing import Annotated, Optional
 from uuid import UUID
-from app.services.website_service import WebsiteService
+from services.website_service import WebsiteService
 class SlugMainService:
     def __init__(self, slug_service: Annotated[SlugService, Depends()],
         website_service: Annotated[WebsiteService, Depends()],):

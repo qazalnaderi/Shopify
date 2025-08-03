@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.domain.models.buyer_model import CartItem
-from app.core.postgres_db.database import get_db
+from domain.models.buyer_model import CartItem
+from core.postgres_db.database import get_db
 from fastapi import Depends
 from uuid import UUID
 import datetime

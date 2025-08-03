@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, status
 from typing import Annotated, List
-from app.domain.schemas.qan_schema import QuestionCreateSchema, QuestionResponseSchema, QuestionAnswerSchema
-from app.services.auth_services.buyer_auth_service import get_current_buyer
-from app.services.auth_services.user_auth_service import  get_current_user
-from app.domain.schemas.token_schema import TokenDataSchema
-from app.services.qan_main_service import QuestionMainService
+from domain.schemas.qan_schema import QuestionCreateSchema, QuestionResponseSchema, QuestionAnswerSchema
+from services.auth_services.buyer_auth_service import get_current_buyer
+from services.auth_services.user_auth_service import  get_current_user
+from domain.schemas.token_schema import TokenDataSchema
+from services.qan_main_service import QuestionMainService
 from uuid import UUID
 from loguru import logger
 

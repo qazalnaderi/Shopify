@@ -1,6 +1,6 @@
-from app.services.website_service import WebsiteService
-from app.services.user_service import UserService
-from app.domain.schemas.website_schema import (WebsiteResponseSchema, WebsiteCreateSchema,
+from services.website_service import WebsiteService
+from services.user_service import UserService
+from domain.schemas.website_schema import (WebsiteResponseSchema, WebsiteCreateSchema,
                                                 WebsiteCategoryCreateSchema,WebsiteCategoryResponseSchema,
                                                   WebsiteSubcategoryCreateSchema,CategoryUpdateSchema,WebsiteUpdateSchema,
                                                   SubCategoryUpdateSchema,
@@ -9,14 +9,14 @@ OrderInvoiceSchema,AddWebsiteOwnerSchema)
 from uuid import UUID
 from fastapi import HTTPException, Depends
 from loguru import logger
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated
 from fastapi.encoders import jsonable_encoder
 from typing import List, Dict
-from app.services.plan_service import PlanService
+from services.plan_service import PlanService
 import jdatetime
 from dateutil.relativedelta import relativedelta
-from app.utils.date_utils import get_jalali_month_year
+from utils.date_utils import get_jalali_month_year
 from datetime import date
 
 class WebsiteMainService(BaseService):

@@ -1,7 +1,7 @@
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from app.core.postgres_db.database import get_db
-from app.domain.models.slug_model import SlugModel
+from core.postgres_db.database import get_db
+from domain.models.slug_model import SlugModel
 from typing import Optional, Annotated
 from uuid import UUID
 

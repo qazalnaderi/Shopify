@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from app.services.item_main_service import ItemMainService
-from app.domain.schemas.item_schema import ItemCreateSchema,ItemResponseWithRateSchema, ItemResponseSchema,NewestItemResponseSchema, ItemUpdateSchema, MessageResponse, ItemResponseWithNameSchema
-from app.services.auth_services.user_auth_service import get_current_user
-from app.domain.schemas.token_schema import TokenDataSchema
+from services.item_main_service import ItemMainService
+from domain.schemas.item_schema import ItemCreateSchema,ItemResponseWithRateSchema, ItemResponseSchema,NewestItemResponseSchema, ItemUpdateSchema, MessageResponse, ItemResponseWithNameSchema
+from services.auth_services.user_auth_service import get_current_user
+from domain.schemas.token_schema import TokenDataSchema
 from loguru import logger
 from typing import Annotated, List
 from uuid import UUID

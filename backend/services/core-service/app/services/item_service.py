@@ -1,9 +1,9 @@
-from app.infrastructure.repositories.item_repository import ItemRepository
-from app.domain.models.website_model import Item
-from app.domain.schemas.item_schema import ItemCreateSchema,ItemUpdateSchema
+from infrastructure.repositories.item_repository import ItemRepository
+from domain.models.website_model import Item
+from domain.schemas.item_schema import ItemCreateSchema,ItemUpdateSchema
 from uuid import UUID
 from fastapi import HTTPException, Depends
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated, List, Dict
 from loguru import logger
 

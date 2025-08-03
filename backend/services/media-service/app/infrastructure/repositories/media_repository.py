@@ -4,8 +4,8 @@ from bson import ObjectId
 from fastapi import Depends
 from motor.motor_asyncio import AsyncIOMotorClient
 
-from app.core.db.database import get_db
-from app.domain.models.media_model import MediaGridFSModel
+from core.db.database import get_db
+from domain.models.media_model import MediaGridFSModel
 
 
 class MediaRepository:

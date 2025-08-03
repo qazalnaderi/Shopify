@@ -1,7 +1,7 @@
-from app.services.payment_service import PaymentService
-from app.services.order_service import OrderService
-from app.services.user_service import UserService
-from app.services.plan_service import PlanService
+from services.payment_service import PaymentService
+from services.order_service import OrderService
+from services.user_service import UserService
+from services.plan_service import PlanService
 from loguru import logger
 from fastapi import  Depends, HTTPException
 from typing import Annotated

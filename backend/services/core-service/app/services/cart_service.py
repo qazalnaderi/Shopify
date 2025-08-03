@@ -1,14 +1,14 @@
-from app.infrastructure.repositories.cart_repository import CartRepository
-from app.infrastructure.repositories.item_repository import ItemRepository
+from infrastructure.repositories.cart_repository import CartRepository
+from infrastructure.repositories.item_repository import ItemRepository
 from typing import Annotated, List
-from app.domain.models.buyer_model import CartItem
+from domain.models.buyer_model import CartItem
 from uuid import UUID
 from fastapi import Depends
 from loguru import logger
 from fastapi import HTTPException
 from datetime import datetime
 from decimal import Decimal
-from app.services.item_service import ItemService
+from services.item_service import ItemService
 class CartService:    
   def __init__(
         self,  

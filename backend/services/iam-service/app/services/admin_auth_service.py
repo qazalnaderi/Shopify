@@ -1,12 +1,12 @@
 from typing import Annotated, Dict
 from loguru import logger
-from  app.domain.models.admin_model import Admin
-from  app.services.base_service import BaseService
+from domain.models.admin_model import Admin
+from services.base_service import BaseService
 from uuid import UUID
-from app.services.admin_service import AdminService
-from app.services.auth_services.auth_service import AuthService
-from app.services.auth_services.otp_service import OTPService
-from app.domain.schemas.admin_schema import VerifyOTPResponseSchema, VerifyOTPSchema, ResendOTPResponseSchema, ResendOTPSchema
+from services.admin_service import AdminService
+from services.auth_services.auth_service import AuthService
+from services.auth_services.otp_service import OTPService
+from domain.schemas.admin_schema import VerifyOTPResponseSchema, VerifyOTPSchema, ResendOTPResponseSchema, ResendOTPSchema
 from fastapi import Depends, HTTPException, status
 
 class AdminAuthService(BaseService):

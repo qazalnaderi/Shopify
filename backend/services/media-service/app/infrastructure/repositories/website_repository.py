@@ -1,8 +1,8 @@
-from app.domain.models.website_model import Website
+from domain.models.website_model import Website
 from sqlalchemy.orm import Session
 from loguru import logger
 from uuid import UUID
-from app.core.postgres_db.postgres_database import get_db
+from core.postgres_db.postgres_database import get_db
 from typing import Annotated
 from fastapi import Depends
 from typing import List, Optional

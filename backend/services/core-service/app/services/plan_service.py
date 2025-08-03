@@ -1,9 +1,9 @@
-from app.infrastructure.repositories.plan_repository import PlanRepository
-from app.infrastructure.repositories.item_repository import ItemRepository
-from app.domain.models.website_model import WebsitePlan, Website
+from infrastructure.repositories.plan_repository import PlanRepository
+from infrastructure.repositories.item_repository import ItemRepository
+from domain.models.website_model import WebsitePlan, Website
 from uuid import UUID
 from fastapi import HTTPException, Depends
-from app.infrastructure.repositories.website_repository import WebsiteRepository
+from infrastructure.repositories.website_repository import WebsiteRepository
 from typing import Annotated, List
 from loguru import logger
 from datetime import datetime

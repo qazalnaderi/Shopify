@@ -9,7 +9,7 @@ from motor.motor_asyncio import (
     AsyncIOMotorGridOut,
 )
 
-from app.core.db.database import get_db, db
+from core.db.database import get_db
 
 
 class GridFsStorage:

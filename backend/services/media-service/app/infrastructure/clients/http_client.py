@@ -4,7 +4,7 @@ from loguru import logger
 import httpx
 import tenacity
 from fastapi import Depends, HTTPException, status
-from app.core.config.config import get_settings, Settings
+from core.config.config import get_settings, Settings
 from tenacity import retry, stop_after_attempt, wait_fixed
 from aiobreaker import CircuitBreaker
 

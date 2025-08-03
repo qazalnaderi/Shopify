@@ -1,17 +1,17 @@
-from app.infrastructure.repositories.website_repository import WebsiteRepository, WebsiteSubcategory, WebsiteOwner
-from app.infrastructure.repositories.buyer_repository import BuyerRepository
-from app.domain.models.website_model import Website, WebsiteCategory
-from app.domain.schemas.website_schema import (WebsiteCreateSchema, WebsiteUpdateSchema,
+from infrastructure.repositories.website_repository import WebsiteRepository, WebsiteSubcategory, WebsiteOwner
+from infrastructure.repositories.buyer_repository import BuyerRepository
+from domain.models.website_model import Website, WebsiteCategory
+from domain.schemas.website_schema import (WebsiteCreateSchema, WebsiteUpdateSchema,
 WebsiteCategoryCreateSchema, SubCategoryResponseSchema, SubCategoryUpdateSchema,WebsiteResponseSchema,
 CategoryUpdateSchema, CategoryResponseSchema, WebsiteSubcategoryCreateSchema)
 from uuid import UUID
 from fastapi import HTTPException, Depends
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated
 from loguru import logger
 from fastapi.encoders import jsonable_encoder
 from typing import List, Dict
-from app.infrastructure.repositories.order_repository import OrderRepository
+from infrastructure.repositories.order_repository import OrderRepository
 from datetime import date
 
 

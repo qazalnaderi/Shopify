@@ -1,18 +1,18 @@
 from uuid import UUID
 from fastapi import APIRouter, Depends, status, Request
 from loguru import logger
-from app.domain.schemas.bind_schema import ItemImageBasicSchema
-from app.services.item_image_main_service import ItemImageMainService
-from app.services.auth_service import get_current_user
+from domain.schemas.bind_schema import ItemImageBasicSchema
+from services.item_image_main_service import ItemImageMainService
+from services.auth_service import get_current_user
 from uuid import UUID
-from app.validator.validator import validate_image_file
+from validator.validator import validate_image_file
 from typing import Annotated, List
-from app.domain.schemas.token_schema import TokenDataSchema
-from app.services.media_service import MediaService
+from domain.schemas.token_schema import TokenDataSchema
+from services.media_service import MediaService
 from fastapi import APIRouter, Depends, UploadFile, status, Form, HTTPException, File
 from fastapi.responses import StreamingResponse
 from bson import ObjectId
-from app.validator.validator import validate_image_file
+from validator.validator import validate_image_file
 item_media_router = APIRouter()
 
 @item_media_router.post("/upload_item_images/{item_id}", status_code=status.HTTP_201_CREATED)

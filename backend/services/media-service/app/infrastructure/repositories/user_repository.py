@@ -3,9 +3,9 @@ from loguru import logger
 from fastapi import Depends
 from sqlalchemy.orm import Session
 from typing import Optional
-from app.core.postgres_db.postgres_database import get_db
-from app.domain.models.website_model import Website, WebsiteOwner
-from app.domain.models.user_model import User  
+from core.postgres_db.postgres_database import get_db
+from domain.models.website_model import Website, WebsiteOwner
+from domain.models.user_model import User  
 from uuid import UUID
 
 class UserRepository:

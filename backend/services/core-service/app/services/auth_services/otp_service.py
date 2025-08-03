@@ -4,8 +4,8 @@ from loguru import logger
 from fastapi import Depends
 from redis import Redis
 
-from  app.core.redis.redis_client import get_redis_client
-from  app.services.base_service import BaseService
+from core.redis.redis_client import get_redis_client
+from services.base_service import BaseService
 
 
 class OTPService(BaseService):

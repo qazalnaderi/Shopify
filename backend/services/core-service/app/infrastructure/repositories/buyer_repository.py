@@ -2,8 +2,8 @@ from typing import Annotated, Dict, List
 from loguru import logger
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from app.core.postgres_db.database import get_db
-from app.domain.models.buyer_model import Buyer 
+from core.postgres_db.database import get_db
+from domain.models.buyer_model import Buyer 
 from uuid import UUID
 
 

@@ -1,9 +1,9 @@
 from typing import Annotated
 from loguru import logger
 from fastapi import Depends 
-from app.core.config.config import get_settings, Settings
-from app.domain.schemas.token_schema import TokenDataSchema
-from app.infrastructure.clients.http_client import HTTPClient
+from core.config.config import get_settings, Settings
+from domain.schemas.token_schema import TokenDataSchema
+from infrastructure.clients.http_client import HTTPClient
 
 
 class IAMClient:

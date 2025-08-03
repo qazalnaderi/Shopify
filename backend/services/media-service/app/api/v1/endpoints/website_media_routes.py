@@ -4,14 +4,14 @@ from fastapi import APIRouter, Depends, UploadFile, status, Form, HTTPException
 from fastapi.responses import StreamingResponse
 from bson import ObjectId
 
-from app.domain.schemas.media_schema import MediaGetSchema, MediaSchema
-from app.domain.schemas.token_schema import TokenDataSchema
-from app.services.media_service import MediaService
-from app.services.auth_service import get_current_user
+from domain.schemas.media_schema import MediaGetSchema, MediaSchema
+from domain.schemas.token_schema import TokenDataSchema
+from services.media_service import MediaService
+from services.auth_service import get_current_user
 from uuid import UUID
-from app.validator.validator import validate_image_file
-from app.services.website_main_service import WebsiteMainService
-from app.domain.schemas.website_schema import WebsiteUpdateSchema
+from validator.validator import validate_image_file
+from services.website_main_service import WebsiteMainService
+from domain.schemas.website_schema import WebsiteUpdateSchema
 
 
 from fastapi.responses import Response

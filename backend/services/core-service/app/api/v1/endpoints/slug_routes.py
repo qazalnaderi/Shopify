@@ -1,7 +1,7 @@
 from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, status
-from app.services.slug_smain_service import SlugMainService
-from app.domain.schemas.slug_schema import CreateSlugInput
+from services.slug_smain_service import SlugMainService
+from domain.schemas.slug_schema import CreateSlugInput
 from typing import Annotated
 
 slug_router = APIRouter()

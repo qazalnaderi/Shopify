@@ -1,8 +1,8 @@
 from uuid import UUID, uuid4
 from typing import Annotated, Optional, List
 from fastapi import Depends
-from app.infrastructure.repositories.item_image_repository import ItemImageRepository
-from app.domain.models.item_image_model import ItemImage
+from infrastructure.repositories.item_image_repository import ItemImageRepository
+from domain.models.item_image_model import ItemImage
 
 
 class ItemImageService:

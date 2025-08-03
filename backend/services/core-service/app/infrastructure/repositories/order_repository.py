@@ -2,15 +2,15 @@ from typing import Annotated
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session,joinedload
 from typing import List, Dict
-from app.core.postgres_db.database import get_db
+from core.postgres_db.database import get_db
 from uuid import UUID
-from app.domain.models.order_model import Order, OrderItem, Buyer
-from app.domain.models.website_model import Item
-from app.infrastructure.repositories.item_repository import ItemRepository
-from app.infrastructure.repositories.cart_repository import CartRepository
+from domain.models.order_model import Order, OrderItem, Buyer
+from domain.models.website_model import Item
+from infrastructure.repositories.item_repository import ItemRepository
+from infrastructure.repositories.cart_repository import CartRepository
 from datetime import datetime, timedelta,date
 from sqlalchemy import extract, func
-from app.utils.date_utils import to_jalali_str
+from utils.date_utils import to_jalali_str
 from loguru import logger
 
 class OrderRepository:

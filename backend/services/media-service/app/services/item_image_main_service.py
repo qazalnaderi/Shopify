@@ -2,8 +2,8 @@
 from typing import Annotated, Optional, List
 from uuid import UUID
 from fastapi import Depends
-from app.domain.models.item_image_model import ItemImage
-from app.services.item_image_service import ItemImageService
+from domain.models.item_image_model import ItemImage
+from services.item_image_service import ItemImageService
 
 class ItemImageMainService:
     def __init__(

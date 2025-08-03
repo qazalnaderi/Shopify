@@ -1,12 +1,12 @@
 from typing import Annotated, Dict
 from loguru import logger
-from  app.domain.models.admin_model import Admin
-from  app.infrastructure.repositories.admin_repository import AdminRepository
-from  app.domain.schemas.admin_schema import ShopPlanStatsSchema, TopWebsiteSchema
-from  app.services.base_service import BaseService
+from domain.models.admin_model import Admin
+from infrastructure.repositories.admin_repository import AdminRepository
+from domain.schemas.admin_schema import ShopPlanStatsSchema, TopWebsiteSchema
+from services.base_service import BaseService
 from uuid import UUID
-from app.infrastructure.repositories.plan_repository import PlanRepository
-from app.infrastructure.repositories.user_repository import UserRepository
+from infrastructure.repositories.plan_repository import PlanRepository
+from infrastructure.repositories.user_repository import UserRepository
 from fastapi import Depends, HTTPException
 from datetime import datetime
 from decimal import Decimal

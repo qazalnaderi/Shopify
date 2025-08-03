@@ -1,14 +1,14 @@
 
-from app.domain.models.review_model import Review
+from domain.models.review_model import Review
 from loguru import logger
-from app.infrastructure.repositories.qan_repository import QuestionRepository
+from infrastructure.repositories.qan_repository import QuestionRepository
 from typing import Annotated, List, Optional
 from fastapi import HTTPException, Depends
-from app.domain.schemas.qan_schema import QuestionCreateSchema, QuestionAnswerSchema
-from app.domain.models.qan_model import ItemQuestion
-from app.services.user_service import UserService
+from domain.schemas.qan_schema import QuestionCreateSchema, QuestionAnswerSchema
+from domain.models.qan_model import ItemQuestion
+from services.user_service import UserService
 from uuid import UUID
-from app.services.plan_service import PlanService
+from services.plan_service import PlanService
 class QuestionService:
     def __init__(self,
                   question_epository: Annotated[QuestionRepository, Depends()],

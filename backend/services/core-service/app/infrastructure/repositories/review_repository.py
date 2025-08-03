@@ -1,8 +1,8 @@
 from typing import Annotated, Optional
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from app.core.postgres_db.database import get_db
-from app.domain.models.review_model import Review
+from core.postgres_db.database import get_db
+from domain.models.review_model import Review
 from uuid import UUID
 from sqlalchemy import func
 from decimal import Decimal

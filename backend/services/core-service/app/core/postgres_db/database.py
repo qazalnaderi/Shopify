@@ -3,20 +3,21 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from loguru import logger
 
-from app.core.configs.config import get_settings
+from core.configs.config import get_settings
 
 config = get_settings()
 
 # DATABASE_URL = "postgresql://postgres:admin@localhost:5432/shopify"
+DATABASE_URL = "postgresql://root:gQoaHut2yzfadEWP85RofClM@shopify:5432/postgres"
 
-DATABASE_URL = (
-    f"{config.DATABASE_DIALECT}://"
-    f"{config.DATABASE_USERNAME}:"
-    f"{config.DATABASE_PASSWORD}@"
-    f"{config.DATABASE_HOSTNAME}:"
-    f"{config.DATABASE_PORT}/"
-    f"{config.DATABASE_NAME}"
-)
+# DATABASE_URL = (
+#     f"{config.DATABASE_DIALECT}://"
+#     f"{config.DATABASE_USERNAME}:"
+#     f"{config.DATABASE_PASSWORD}@"
+#     f"{config.DATABASE_HOSTNAME}:"
+#     f"{config.DATABASE_PORT}/"
+#     f"{config.DATABASE_NAME}"
+# )
 
 engine = create_engine(DATABASE_URL, future=True)
 session_local = sessionmaker(autoflush=False, autocommit=False, bind=engine)

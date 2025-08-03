@@ -1,9 +1,9 @@
 from fastapi import HTTPException, Depends
-from app.domain.schemas.coupon_schema import CouponCreateSchema, CouponResponseSchema
-from app.domain.models.website_model import Coupon
-from app.services.coupon_service import  CouponService
+from domain.schemas.coupon_schema import CouponCreateSchema, CouponResponseSchema
+from domain.models.website_model import Coupon
+from services.coupon_service import  CouponService
 from uuid import UUID
-from app.services.website_service import WebsiteService
+from services.website_service import WebsiteService
 from typing import Annotated, List
 from loguru import logger
 

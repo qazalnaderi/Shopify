@@ -1,11 +1,11 @@
 from typing import Annotated, Dict
 from loguru import logger
 from fastapi import Depends, HTTPException
-from  app.domain.models.user_model import User
-from  app.domain.schemas.user_schema import UserCreateSchema
-from  app.infrastructure.repositories.user_repository import UserRepository
-from  app.services.auth_services.hash_service import HashService
-from  app.services.base_service import BaseService
+from domain.models.user_model import User
+from domain.schemas.user_schema import UserCreateSchema
+from infrastructure.repositories.user_repository import UserRepository
+from services.auth_services.hash_service import HashService
+from services.base_service import BaseService
 import uuid
 
 

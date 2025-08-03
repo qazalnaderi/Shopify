@@ -1,11 +1,11 @@
 from typing import Annotated, Dict
 from loguru import logger
-from  app.domain.models.admin_model import Admin
-from  app.infrastructure.repositories.admin_repository import AdminRepository
-from  app.services.auth_services.hash_service import HashService
-from  app.services.base_service import BaseService
+from domain.models.admin_model import Admin
+from infrastructure.repositories.admin_repository import AdminRepository
+from services.auth_services.hash_service import HashService
+from services.base_service import BaseService
 from uuid import UUID
-from app.services.auth_services.otp_service import OTPService
+from services.auth_services.otp_service import OTPService
 from fastapi import Depends, HTTPException
 
 class AdminService(BaseService):

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.domain.models.website_model import Coupon
-from app.core.postgres_db.database import get_db
+from domain.models.website_model import Coupon
+from core.postgres_db.database import get_db
 from fastapi import Depends
 from typing import Annotated, Optional, List
 from uuid import UUID

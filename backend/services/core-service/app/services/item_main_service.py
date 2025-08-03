@@ -1,15 +1,15 @@
-from app.services.item_service import ItemService
-from app.domain.schemas.item_schema import ItemCreateSchema, NewestItemResponseSchema, ItemResponseWithRateSchema, ItemResponseSchema, ItemUpdateSchema, MessageResponse, ItemResponseWithNameSchema
+from services.item_service import ItemService
+from domain.schemas.item_schema import ItemCreateSchema, NewestItemResponseSchema, ItemResponseWithRateSchema, ItemResponseSchema, ItemUpdateSchema, MessageResponse, ItemResponseWithNameSchema
 from uuid import UUID
 from fastapi import HTTPException, Depends
 from loguru import logger
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated, List, Dict
-from app.services.website_service import WebsiteService
-from app.services.plan_service import PlanService
+from services.website_service import WebsiteService
+from services.plan_service import PlanService
 from decimal import Decimal
-from app.services.order_service import OrderService
-from app.services.review_service import ReviewService
+from services.order_service import OrderService
+from services.review_service import ReviewService
 
 
 class ItemMainService(BaseService):

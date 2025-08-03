@@ -1,11 +1,11 @@
 from typing import Annotated
-from app.services.payment_main_service import PaymentMainService
+from services.payment_main_service import PaymentMainService
 from fastapi import APIRouter, Depends, Query
 from uuid import UUID
-from app.services.auth_services.user_auth_service import  get_current_user
-from app.services.auth_services.buyer_auth_service import get_current_buyer
+from services.auth_services.user_auth_service import  get_current_user
+from services.auth_services.buyer_auth_service import get_current_buyer
 
-from app.domain.schemas.token_schema import TokenDataSchema
+from domain.schemas.token_schema import TokenDataSchema
 from loguru import logger
 from fastapi.responses import RedirectResponse, JSONResponse
 

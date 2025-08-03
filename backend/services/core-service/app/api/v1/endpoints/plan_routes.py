@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, status
 from typing import Annotated, List
-from app.services.plan_main_service import PlanMainService
+from services.plan_main_service import PlanMainService
 from uuid import UUID
-from app.services.auth_services.user_auth_service import get_current_user
-from app.domain.schemas.token_schema import TokenDataSchema
+from services.auth_services.user_auth_service import get_current_user
+from domain.schemas.token_schema import TokenDataSchema
 
 plan_router = APIRouter()
 

@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, status, Query
-from app.services.website_main_service import WebsiteMainService
-from app.domain.schemas.website_schema import (WebsiteCreateSchema, WebsiteResponseSchema,
+from services.website_main_service import WebsiteMainService
+from domain.schemas.website_schema import (WebsiteCreateSchema, WebsiteResponseSchema,
                                                 WebsiteCategoryCreateSchema,WebsiteCategoryResponseSchema,
                                                   WebsiteCategoryResponseSchema,CategoryUpdateSchema,
                                                   SubCategoryUpdateSchema,OrderInvoiceSchema,
                                                   WebsiteSubcategoryResponseSchema, WebsiteSubcategoryCreateSchema,
                                                   WebsiteUpdateSchema ,AddWebsiteOwnerSchema)
-from app.services.auth_services.user_auth_service import get_current_user
-from app.domain.schemas.token_schema import TokenDataSchema
+from services.auth_services.user_auth_service import get_current_user
+from domain.schemas.token_schema import TokenDataSchema
 from loguru import logger
 from typing import Annotated, List, Literal, Dict, Optional
 from uuid import UUID

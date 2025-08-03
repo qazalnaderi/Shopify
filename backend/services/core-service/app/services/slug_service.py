@@ -2,9 +2,9 @@ from typing import Annotated, Dict
 from loguru import logger
 from fastapi import Depends, HTTPException
 from typing import Optional
-from app.infrastructure.repositories.slug_repository import SlugRepository
-from app.services.base_service import BaseService
-from app.domain.models.slug_model import SlugModel
+from infrastructure.repositories.slug_repository import SlugRepository
+from services.base_service import BaseService
+from domain.models.slug_model import SlugModel
 from uuid import UUID
 
 class SlugService:

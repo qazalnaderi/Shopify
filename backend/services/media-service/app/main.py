@@ -3,14 +3,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 import logging
 
-from app.api.v1.endpoints.website_media_routes import media_router
-from app.api.v1.endpoints.item_imag_routes import item_media_router
+from api.v1.endpoints.website_media_routes import media_router
+from api.v1.endpoints.item_imag_routes import item_media_router
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     force=True,
 )
+
+import os
+import uvicorn
+from multiprocessing import Process
 
 logger = logging.getLogger(__name__)
 logger.info("Custom logging is configured.")
@@ -34,3 +38,15 @@ logger.info("Media Service Started")
 @app.get("/")
 async def root():
     return {"message": "Hello Dear! Welcome to Media Service."}
+
+def run_media():
+
+    uvicorn.run(app, host="0.0.0.0", port=8003)
+
+if __name__ == "__main__":
+    p1 = Process(target=run_media)
+
+
+    p1.start()
+
+    p1.join()

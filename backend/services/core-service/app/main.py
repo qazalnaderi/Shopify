@@ -8,22 +8,24 @@ logger = logging.getLogger(__name__)
 logger.info("Custom logging is configured.")
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
-from app.api.v1.endpoints.websites_routes import website_router
-from app.api.v1.endpoints.item_routes import item_router
-from app.api.v1.endpoints.order_routes import order_router
-from app.api.v1.endpoints.cart_routes import cart_router
-from app.api.v1.endpoints.payment_routes import payment_router
-from app.api.v1.endpoints.review_routes import review_router
-from app.api.v1.endpoints.qan_routes import qan_router
-from app.api.v1.endpoints.admin_routes import admin_router
-from app.api.v1.endpoints.coupon_routes import coupon_router
-from app.api.v1.endpoints.plan_routes import plan_router
-from app.api.v1.endpoints.slug_routes import slug_router
-from app.api.v1.endpoints.favorite_routes import favorite_router
-
+from api.v1.endpoints.websites_routes import website_router
+from api.v1.endpoints.item_routes import item_router
+from api.v1.endpoints.order_routes import order_router
+from api.v1.endpoints.cart_routes import cart_router
+from api.v1.endpoints.payment_routes import payment_router
+from api.v1.endpoints.review_routes import review_router
+from api.v1.endpoints.qan_routes import qan_router
+from api.v1.endpoints.admin_routes import admin_router
+from api.v1.endpoints.coupon_routes import coupon_router
+from api.v1.endpoints.plan_routes import plan_router
+from api.v1.endpoints.slug_routes import slug_router
+from api.v1.endpoints.favorite_routes import favorite_router
+import os
+import uvicorn
+from multiprocessing import Process
 app = FastAPI()
 
-from app.utils.scheduler_starter import starter
+from utils.scheduler_starter import starter
 
 @app.on_event("startup")
 async def start_scheduler():
@@ -56,3 +58,14 @@ app.include_router(favorite_router, prefix="/api/v1/favorite", tags=["favorites"
 async def root():
     return {"message": "Hello Dear! Welcome to the Core service."}
 
+def run_core():
+
+    uvicorn.run(app, host="0.0.0.0", port=8002)
+
+if __name__ == "__main__":
+    p1 = Process(target=run_core)
+
+
+    p1.start()
+
+    p1.join()

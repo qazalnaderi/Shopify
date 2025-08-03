@@ -4,8 +4,8 @@ from typing import Annotated
 from loguru import logger
 from uuid import UUID
 
-from app.domain.models.buyer_model import Buyer
-from app.domain.schemas.buyer_schema import (
+from domain.models.buyer_model import Buyer
+from domain.schemas.buyer_schema import (
     BuyerCreateSchema,
     BuyerResponseSchema,
     VerifyOTPSchema,
@@ -17,10 +17,10 @@ from app.domain.schemas.buyer_schema import (
     UpdateBuyerInfoSchema,
     ForgetPasswordSchema
 )
-from app.domain.schemas.token_schema import TokenSchema, TokenDataSchema
-from app.services.auth_services.auth_service import AuthService
-from app.services.buyer_main_service import RegisterService
-from app.services.auth_services.auth_service import get_current_buyer
+from domain.schemas.token_schema import TokenSchema, TokenDataSchema
+from services.auth_services.auth_service import AuthService
+from services.buyer_main_service import RegisterService
+from services.auth_services.auth_service import get_current_buyer
 
 buyer_router = APIRouter()
 

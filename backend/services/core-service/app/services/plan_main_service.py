@@ -1,7 +1,7 @@
-from app.services.plan_service import PlanService
+from services.plan_service import PlanService
 from uuid import UUID
 from fastapi import Depends
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated
 
 class PlanMainService(BaseService):

@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, status
-from app.services.auth_services.user_auth_service import get_current_user
-from app.services.auth_services.buyer_auth_service import get_current_buyer
-from app.domain.schemas.token_schema import TokenDataSchema
+from services.auth_services.user_auth_service import get_current_user
+from services.auth_services.buyer_auth_service import get_current_buyer
+from domain.schemas.token_schema import TokenDataSchema
 from loguru import logger
 from typing import Annotated, List
-from app.domain.schemas.coupon_schema import CouponCreateSchema, CouponResponseSchema
-from app.services.coupon_main_service import CouponMainService
+from domain.schemas.coupon_schema import CouponCreateSchema, CouponResponseSchema
+from services.coupon_main_service import CouponMainService
 from uuid import UUID
 
 coupon_router = APIRouter()

@@ -3,7 +3,7 @@ import requests
 from loguru import logger
 from redis import Redis
 from datetime import timedelta
-from  app.core.redis.redis_client import get_redis_client
+from core.redis.redis_client import get_redis_client
 from typing import Annotated
 from loguru import logger
 from fastapi import Depends
@@ -13,7 +13,7 @@ import requests
 from loguru import logger
 from redis import Redis
 from datetime import timedelta
-from app.core.redis.redis_client import get_redis_client
+from core.redis.redis_client import get_redis_client
 from typing import Annotated
 from fastapi import Depends
 

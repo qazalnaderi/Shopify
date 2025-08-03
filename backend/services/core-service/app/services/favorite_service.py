@@ -1,6 +1,6 @@
-from app.infrastructure.repositories.favorite_repository import FavoriteRepository
+from infrastructure.repositories.favorite_repository import FavoriteRepository
 from uuid import UUID
-from app.domain.models.favorite_model import Favorite
+from domain.models.favorite_model import Favorite
 from fastapi import HTTPException, Depends
 from typing import Annotated, List
 from loguru import logger

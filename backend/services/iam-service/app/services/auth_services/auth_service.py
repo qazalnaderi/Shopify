@@ -3,18 +3,18 @@ from typing import Annotated
 from loguru import logger
 import jwt
 from fastapi import Depends, HTTPException, status
-from app.domain.models.user_model import User
-from app.domain.models.buyer_model import Buyer
-from app.domain.models.admin_model import Admin
-from app.services.auth_services.hash_service import HashService
-from app.services.base_service import BaseService
-from app.services.user_service import UserService
-from app.services.buyer_service import BuyerService
-from app.services.admin_service import AdminService
-from app.domain.schemas.token_schema import TokenSchema
-from app.domain.schemas.user_schema import UserLoginSchema
-from app.domain.schemas.buyer_schema import BuyerLoginSchema
-from app.domain.schemas.admin_schema import AdminLoginSchema
+from domain.models.user_model import User
+from domain.models.buyer_model import Buyer
+from domain.models.admin_model import Admin
+from services.auth_services.hash_service import HashService
+from services.base_service import BaseService
+from services.user_service import UserService
+from services.buyer_service import BuyerService
+from services.admin_service import AdminService
+from domain.schemas.token_schema import TokenSchema
+from domain.schemas.user_schema import UserLoginSchema
+from domain.schemas.buyer_schema import BuyerLoginSchema
+from domain.schemas.admin_schema import AdminLoginSchema
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 http_bearer = HTTPBearer() 

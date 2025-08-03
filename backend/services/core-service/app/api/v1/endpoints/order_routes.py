@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from typing import List, Annotated
 from uuid import UUID
-from app.domain.schemas.order_schema import OrderCreateSchema, OrderResponseSchema, OrderFactorResponseSchema
-from app.domain.schemas.token_schema import TokenDataSchema
-from app.services.order_main_service import OrderMainService
-from app.services.auth_services.buyer_auth_service import get_current_buyer
-from app.services.auth_services.user_auth_service import  get_current_user
+from domain.schemas.order_schema import OrderCreateSchema, OrderResponseSchema, OrderFactorResponseSchema
+from domain.schemas.token_schema import TokenDataSchema
+from services.order_main_service import OrderMainService
+from services.auth_services.buyer_auth_service import get_current_buyer
+from services.auth_services.user_auth_service import  get_current_user
 
 from loguru import logger
 

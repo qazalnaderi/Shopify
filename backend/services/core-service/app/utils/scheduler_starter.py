@@ -1,9 +1,9 @@
-from app.core.postgres_db.database import get_db
-from app.infrastructure.repositories.cart_repository import CartRepository
-from app.infrastructure.repositories.plan_repository import PlanRepository
-from app.infrastructure.repositories.order_repository import OrderRepository
-from app.infrastructure.repositories.item_repository import ItemRepository
-from app.infrastructure.scheduler.scheduler import SchedulerService
+from core.postgres_db.database import get_db
+from infrastructure.repositories.cart_repository import CartRepository
+from infrastructure.repositories.plan_repository import PlanRepository
+from infrastructure.repositories.order_repository import OrderRepository
+from infrastructure.repositories.item_repository import ItemRepository
+from infrastructure.scheduler.scheduler import SchedulerService
 
 def starter():
     db = next(get_db()) 

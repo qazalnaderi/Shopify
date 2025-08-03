@@ -13,18 +13,18 @@ class Settings(BaseSettings):
     DATABASE_PORT: int = 5432
     DATABASE_USERNAME: str = "postgres"
     DEBUG_MODE: bool = False
-    REDIS_URL: str = "localhost"
+    # REDIS_URL: str = "localhost"
     # REDIS_URL: str = "redis"
     REDIS_PORT: int = 6379
     JWT_SECRET_KEY : str = "3ffdda4a51a141cff4485a36f9cd137287f2526c1edb8300cd678ab96a49d1bd"
     JWT_ALGORITHM : str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     OTP_EXPIRE_TIME: int = 3600
-    # DATABASE_URL: str = "mongodb://root:nrpIGXLvSytodcIrtyxLE5V7@mongo:27017/my-app?authSource=admin"
-    DATABASE_URL: str =  "mongodb://mongo:27017/shopify" 
+    DATABASE_URL: str = "mongodb://root:hRe28rVwPpVTlqsXFjZaoLdU@mongo:27017/my-app?authSource=admin"
+    # DATABASE_URL: str =  "mongodb://mongo:27017/shopify" 
     FILE_STORAGE_PATH: str = "app/media"
-    # IAM_URL: str = "https://tradehub-iam.liara.run"
-    IAM_URL: str = "http://iam" 
+    IAM_URL: str = "https://iam-tradehub.liara.run"
+    # IAM_URL: str = "http://iam" 
     GRPC_PORT: int = 50051
 
 @logger.catch

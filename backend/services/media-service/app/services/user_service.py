@@ -1,11 +1,11 @@
 from typing import Annotated, Dict
 from loguru import logger
 from fastapi import Depends, HTTPException
-from  app.domain.models.website_model import  Website
-from app.domain.models.user_model import User
-from  app.infrastructure.repositories.user_repository import UserRepository
-from  app.infrastructure.repositories.website_repository import WebsiteRepository
-from  app.services.base_service import BaseService
+from domain.models.website_model import  Website
+from domain.models.user_model import User
+from infrastructure.repositories.user_repository import UserRepository
+from infrastructure.repositories.website_repository import WebsiteRepository
+from services.base_service import BaseService
 from uuid import UUID
 
 

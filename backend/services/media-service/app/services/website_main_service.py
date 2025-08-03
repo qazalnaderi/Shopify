@@ -1,10 +1,10 @@
-from app.services.website_service import WebsiteService
-from app.services.user_service import UserService
-from app.domain.schemas.website_schema import (WebsiteResponseSchema, WebsiteUpdateSchema)
+from services.website_service import WebsiteService
+from services.user_service import UserService
+from domain.schemas.website_schema import (WebsiteResponseSchema, WebsiteUpdateSchema)
 from uuid import UUID
 from fastapi import HTTPException, Depends
 from loguru import logger
-from app.services.base_service import BaseService
+from services.base_service import BaseService
 from typing import Annotated
 from fastapi.encoders import jsonable_encoder
 

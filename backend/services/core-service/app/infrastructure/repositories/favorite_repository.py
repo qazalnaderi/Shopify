@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from app.domain.models.favorite_model import Favorite
+from domain.models.favorite_model import Favorite
 from uuid import UUID
-from app.core.postgres_db.database import get_db
+from core.postgres_db.database import get_db
 from typing import Annotated, Optional, List
 from fastapi import Depends
 from loguru import logger

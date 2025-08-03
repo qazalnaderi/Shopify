@@ -1,6 +1,6 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from loguru import logger
-from app.core.config.config import get_settings
+from core.config.config import get_settings
 
 try:
     config = get_settings()
