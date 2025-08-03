@@ -4,8 +4,8 @@ from typing import Annotated
 from bson import ObjectId
 from pydantic import BaseModel
 
-from app.domain.models.media_model import MediaModel
-from app.domain.models.object_id_model import ObjectIdPydanticAnnotation
+from domain.models.media_model import MediaModel
+from domain.models.object_id_model import ObjectIdPydanticAnnotation
 
 
 class MediaSchema(MediaModel):

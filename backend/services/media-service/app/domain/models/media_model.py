@@ -4,7 +4,7 @@ from typing import Annotated
 from bson import ObjectId
 from pydantic import BaseModel
 
-from app.domain.models.object_id_model import ObjectIdPydanticAnnotation
+from domain.models.object_id_model import ObjectIdPydanticAnnotation
 
 
 class MediaModel(BaseModel):
