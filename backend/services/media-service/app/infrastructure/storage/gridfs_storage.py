@@ -7,13 +7,14 @@ from motor.motor_asyncio import (
     AsyncIOMotorClient,
     AsyncIOMotorGridFSBucket,
     AsyncIOMotorGridOut,
+    AsyncIOMotorDatabase
 )
 
 from core.db.database import get_db
 
 
 class GridFsStorage:
-    def __init__(self, db: Annotated[AsyncIOMotorClient, Depends(get_db)]):
+    def __init__(self, db: Annotated[AsyncIOMotorDatabase, Depends(get_db)]):
         self.db = db
         self.fs = None
 
@@ -32,7 +33,7 @@ class GridFsStorage:
         logger.info(f"File {file.filename} saved")
         return grid_in._id
 
-    async def get_file(self, file_id: ObjectId) -> AsyncIOMotorGridOut:
+    async def get_file(self, file_id: ObjectId) -> bytes:
         await self.init_fs()
         file_obj = await self.fs.open_download_stream(file_id)
         logger.info(f"File {file_id} retrieved")
