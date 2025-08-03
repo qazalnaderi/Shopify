@@ -25,6 +25,7 @@ class GridFsStorage:
 
     async def save_file(self, file: UploadFile) -> ObjectId:
         await self.init_fs()
+        file_bytes = await file.read()
         file_id = await self.fs.upload_from_stream(
         file.filename,
         file_bytes,
