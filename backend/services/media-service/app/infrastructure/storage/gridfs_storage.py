@@ -24,7 +24,7 @@ class GridFsStorage:
 
     async def save_file(self, file: UploadFile) -> ObjectId:
         await self.init_fs()
-        grid_in = await self.fs.open_upload_stream(
+        grid_in = self.fs.open_upload_stream(
             file.filename, metadata={"content_type": file.content_type}
         )
         await grid_in.write(await file.read())
