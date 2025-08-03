@@ -145,8 +145,8 @@ CREATE TABLE subscription_plans (
   allow_analytics BOOLEAN DEFAULT FALSE,
   price DECIMAL(10,2) NOT NULL CHECK (price >= 0)
 );
-insert into public.subscription_plans (name,item_limit,allow_discount,allow_analytics) values('Basic',100,False,False,500000)
-insert into public.subscription_plans (name,item_limit,allow_discount,allow_analytics) values('Pro',500,True,True,1500000)
+insert into public.subscription_plans (name,item_limit,allow_discount,allow_analytics, price) values('Basic',100,False,False,500000);
+insert into public.subscription_plans (name,item_limit,allow_discount,allow_analytics, price) values('Pro',500,True,True,1500000);
 -- 14. Website plans
 CREATE TABLE website_plans (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -273,14 +273,3 @@ CREATE INDEX idx_orders_website_id ON orders(website_id);
 CREATE INDEX idx_orders_created_at ON orders(created_at DESC);
 CREATE INDEX idx_website_owners_website_id ON website_owners(website_id);
 CREATE INDEX idx_website_owners_user_id ON website_owners(user_id);
-
-
-
-
-
-
-
-
-
-
-
